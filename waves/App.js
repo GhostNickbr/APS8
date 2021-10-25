@@ -1,16 +1,17 @@
-import { Button } from '@mui/material';
+
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, Button, View } from 'react-native';
 import Globais from './Globais';
 import Requisicao from './Requisicao'
 
 export default function App() {
+  
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <Button
-        onPress={onPressLearnMore}
+        onPress={Requisicao}
         title="Learn More"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"

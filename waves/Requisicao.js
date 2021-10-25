@@ -1,5 +1,11 @@
 import Globais from './Globais';
+import React from 'react';
+import {Text} from 'react-native';
 
+
+export default function Main(){
+  WebServiceCodigo();
+}
 
 function WebServiceCodigo(){
 
@@ -24,7 +30,9 @@ function WebServiceCodigo(){
   
         Globais.idcidade = xml.getElementsByTagName('id')[0].value //Pega o primeiro código de cidade
   
-        console.log('ID DA CIDADE: '+Globais.idcidade)           
+        console.log('ID DA CIDADE: '+Globais.idcidade)
+        
+        WebServiceHoje();
   
       
       } else {
@@ -36,10 +44,7 @@ function WebServiceCodigo(){
     request.open('GET', url);
     request.send();
   
-      return(
-  
-        <Text> {request.responseText} </Text>
-      )
+      return;
   }
   
   
@@ -76,6 +81,8 @@ function WebServiceCodigo(){
           console.log('Vento: ', Globais.vento[x])
           console.log('Vento Direção: ', Globais.ventodir[x])
         }
+
+        WebService6Dias();
   
       } else {
         console.warn('Não foi possível se comunicar com os servidores');
@@ -85,9 +92,7 @@ function WebServiceCodigo(){
     request.open('GET', 'http://servicos.cptec.inpe.br/XML/cidade/'+Globais.idcidade+'/dia/0/ondas.xml');
     request.send();
       
-      return(
-        <Text> {request.responseText} </Text>
-      )
+      return;
   }
   
   function WebService6Dias(){
@@ -142,7 +147,5 @@ function WebServiceCodigo(){
     request.open('GET', 'http://servicos.cptec.inpe.br/XML/cidade/'+Globais.idcidade+'/todos/tempos/ondas.xml');
     request.send();
       
-      return(
-        <Text> {request.responseText} </Text>
-      )
+      return;
   }
