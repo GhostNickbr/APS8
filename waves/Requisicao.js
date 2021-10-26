@@ -1,7 +1,4 @@
 import Globais from './Globais';
-import React from 'react';
-import {Text} from 'react-native';
-
 
 export default function Main(){
   WebServiceCodigo();
@@ -81,8 +78,6 @@ function WebServiceCodigo(){
           console.log('Vento: ', Globais.vento[x])
           console.log('Vento Direção: ', Globais.ventodir[x])
         }
-
-        WebService6Dias();
   
       } else {
         console.warn('Não foi possível se comunicar com os servidores');

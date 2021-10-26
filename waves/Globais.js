@@ -1,4 +1,5 @@
 export default class Globais{
+    
     static cidade = 'Santos'
     static idcidade
     //Vetores para hoje
