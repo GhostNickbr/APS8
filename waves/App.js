@@ -1,31 +1,44 @@
-
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, Button, View, TextInput, ScrollView} from 'react-native';
 import Globais from './Globais';
 import Requisicao from './Requisicao'
+
+
 
 export default function App() {
 
   
   return (
 
+    
 
     <View style={styles.container}>    
     <View style={styles.containerPesquisa}>   
-    <TextInput type="text" placeholder="  Busque uma cidade..." style={styles.campoBusca} onChangeText={() => {Globais.cidade}}/>
-      <View style={styles.envioBusca} >
+      <View style={styles.campoCidade} >
       <Button 
       color="#87cefa"   
       borderRadius="20" 
       width= "200"
       height= "50"
       onPress={() => Requisicao()}
-      title="Buscar" />    
+      title="Atualizar" />    
+      <Button 
+      color="#87cefa"   
+      borderRadius="20" 
+      width= "200"
+      height= "50"
+      onPress={() => Globais.cidade = 'Ilhabela'}
+      title="Ilhabela" /> 
+            <Button 
+      color="#87cefa"   
+      borderRadius="20" 
+      width= "200"
+      height= "50"
+      onPress={() => Globais.cidade = 'Santos'}
+      title="Santos" />
       </View>   
-    </View>   
+    </View>     
     <Atualizar/>
-  
   </View>
 
       
@@ -46,7 +59,7 @@ function Atualizar(){
     </View>
     <View style={styles.containerResultado}>    
     <View style={styles.containerAgitacao}>   
-    <Text style={styles.tituloResultado}>Periodo: Manhã</Text>    
+    <Text style={styles.tituloResultado}>Periodo: Manhã </Text>    
     <Text style={styles.resultado}>Altura: {Globais.altura[0]} | Direção: {Globais.direçao[0]}</Text>
     <Text style={styles.resultado}>Agitação: {Globais.agitação[0]}</Text>
     <Text style={styles.resultado}>Vento: {Globais.vento[0]} | Direção: {Globais.ventodir[0]}</Text>

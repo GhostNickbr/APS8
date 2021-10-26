@@ -37,6 +37,7 @@ function WebServiceCodigo(){
       }
     };
     
+    
     let url = 'http://servicos.cptec.inpe.br/XML/listaCidades?city='+Globais.cidade
     request.open('GET', url);
     request.send();
@@ -79,6 +80,7 @@ function WebServiceCodigo(){
           console.log('Vento Direção: ', Globais.ventodir[x])
         }
   
+
       } else {
         console.warn('Não foi possível se comunicar com os servidores');
       }
