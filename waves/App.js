@@ -2,21 +2,26 @@ import React from 'react';
 import { StyleSheet, Text, Button, View, TextInput, ScrollView} from 'react-native';
 import Globais from './Globais';
 import Requisicao from './Requisicao'
+import ImagedCardView from "react-native-imaged-card-view";
+
+
 
 
 export default function App() {
 
 
   
-  return (
+  /*return (
 
     
 
+    <View style={styles.container}>  
 
-
-    <View style={styles.container}>    
     <View style={styles.containerPesquisa}>   
+    
       <View style={styles.campoCidade} >
+
+        
       <Button 
       color="#87cefa"   
       borderRadius="20" 
@@ -45,6 +50,61 @@ export default function App() {
 
       
 
+);*/
+
+return(
+  <ScrollView style={styles.container}> 
+  <View style={styles.image}>
+    <View style={styles.container}>{Requisicao}</View>
+    <ImagedCardView
+      stars={5}
+      reviews={456}
+      ratings={4.5}
+      title="Yosemite"
+      rightSideValue="$990"
+      subtitle="California"
+      leftSideValue="3 Days"
+      backgroundColor="#ff6460"
+      />
+    </View>
+    <View style={styles.image}>
+    <ImagedCardView
+      stars={5}
+      reviews={456}
+      ratings={4.5}
+      title="Yosemite"
+      rightSideValue="$990"
+      subtitle="California"
+      leftSideValue="3 Days"
+      backgroundColor="#ff6460"
+      />
+    </View>
+    <View style={styles.image}>
+    <ImagedCardView
+      stars={5}
+      reviews={456}
+      ratings={4.5}
+      title="Yosemite"
+      rightSideValue="$990"
+      subtitle="California"
+      leftSideValue="3 Days"
+      backgroundColor="#ff6460"
+      />
+    </View>
+    <View style={styles.image}>
+    <ImagedCardView
+      stars={5}
+      reviews={456}
+      ratings={4.5}
+      title="Yosemite"
+      rightSideValue="$990"
+      subtitle="California"
+      leftSideValue="3 Days"
+      backgroundColor="#ff6460"
+      />
+    </View>
+</ScrollView>
+
 );
 }
 
@@ -53,12 +113,14 @@ function Atualizar(){
 
 
   return(
+    
     <View style={styles.container}>    
-
     <View>    
       <Text style={styles.campoCidade}>{Globais.cidade}</Text>
       <Text style={styles.campoData}>26/10/2021</Text>            
     </View>
+
+
     <View style={styles.containerResultado}>    
     <View style={styles.containerAgitacao}>   
     <Text style={styles.tituloResultado}>Periodo: Manhã </Text>    
@@ -101,12 +163,21 @@ function Atualizar(){
 
 
 
+
+
+
 const styles = StyleSheet.create ({
 
 //Formato da tela
 container: {
   width: '100%',
-  height: '100%',
+  padding: 50
+},
+
+image: {
+  width: '100%',
+  marginTop: '10%',
+  padding: 5
 },
 
 //container que armazena o campo de pesquisa e o botão de consulta

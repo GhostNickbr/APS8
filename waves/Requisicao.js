@@ -1,10 +1,17 @@
 import Globais from './Globais';
+import React, { useState } from 'react';
+import { StyleSheet, Text, Button, View, TextInput, ScrollView} from 'react-native';
 
-export default function Main(){
+
+
+/*export default function Main(){
   WebServiceCodigo();
-}
+}*/
 
-function WebServiceCodigo(){
+export default WebServiceCodigo;
+
+
+const WebServiceCodigo = () => {
 
     var request = new XMLHttpRequest();
   
@@ -42,7 +49,22 @@ function WebServiceCodigo(){
     request.open('GET', url);
     request.send();
   
-      return;
+      return(
+
+        <View style={styles.image}>
+        <ImagedCardView
+          stars={1}
+          reviews={456}
+          ratings={4.5}
+          title="FOI?"
+          rightSideValue="$990"
+          subtitle="California"
+          leftSideValue="3 Days"
+          backgroundColor="#ff6460"
+          />
+        </View>
+
+      );
   }
   
   
@@ -146,3 +168,12 @@ function WebServiceCodigo(){
       
       return;
   }
+
+  const styles = StyleSheet.create ({
+  image: {
+    width: '100%',
+    marginTop: '10%',
+    padding: 5
+  },
+
+})
