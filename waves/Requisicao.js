@@ -1,17 +1,15 @@
 import Globais from './Globais';
-import React, { useState } from 'react';
 import { StyleSheet, Text, Button, View, TextInput, ScrollView} from 'react-native';
 
 
 
-/*export default function Main(){
+export default function Main(){
   WebServiceCodigo();
-}*/
-
-export default WebServiceCodigo;
+}
 
 
-const WebServiceCodigo = () => {
+
+const WebServiceCodigo = (city1) => {
 
     var request = new XMLHttpRequest();
   
@@ -48,23 +46,8 @@ const WebServiceCodigo = () => {
     let url = 'http://servicos.cptec.inpe.br/XML/listaCidades?city='+Globais.cidade
     request.open('GET', url);
     request.send();
-  
-      return(
 
-        <View style={styles.image}>
-        <ImagedCardView
-          stars={1}
-          reviews={456}
-          ratings={4.5}
-          title="FOI?"
-          rightSideValue="$990"
-          subtitle="California"
-          leftSideValue="3 Days"
-          backgroundColor="#ff6460"
-          />
-        </View>
-
-      );
+    return;
   }
   
   
